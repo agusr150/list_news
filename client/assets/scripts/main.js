@@ -5,6 +5,7 @@ $(document).ready(function(){
         $(`.section`).hide()
         $(`#news-table`).empty()
         $(`#newslist`).show()
+        $(`#seeWeather`).slideDown(1000)
         listshow()
     } else {
         $(`#error`).empty()
