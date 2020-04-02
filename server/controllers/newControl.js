@@ -2,7 +2,9 @@ const { New } = require('../models')
 
 class NewControl {
     static show(req, res, next) {
-        New.findAll()
+        New.findAll({
+            where: {UserId: req.userdata.id}
+        })
             .then(result => {
                 res.status(200).json(result)
             })
@@ -41,6 +43,7 @@ class NewControl {
     }
 
     static edit(req, res, next) {
+        console.log('edit')
         New.update(req.body, {
             where: { id: req.params.id }
         })
