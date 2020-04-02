@@ -1,4 +1,3 @@
-let local = 'http://localhost:3000'
 
 $(`#register-form`).submit(function (event){
     event.preventDefault()
@@ -13,7 +12,7 @@ $(`#register-form`).submit(function (event){
         console.log('ajaxxxx')
         $.ajax({
             type: "POST", 
-            url: `${local}/user/register`, 
+            url: `http://localhost:3000/user/register`, 
             data: {
                 email: email,
                 password: password

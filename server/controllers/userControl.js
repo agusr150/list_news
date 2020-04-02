@@ -37,7 +37,7 @@ class UserControl {
                 console.log("---req body pass")
                 console.log(req.body.password)
                 if (bcrypt.compareSync(req.body.password, data.password)){
-                let token = jwt.sign({id: data.id, email: data.email}, process.env.JWT_SECRET)
+                let token = jwt.sign({id: data.id, email: data.email}, 'secret')
                 res.status(200).json({token: token})
                 } else {
                     res.status(400).json('password wrong')

@@ -1,4 +1,3 @@
-let local = 'http://localhost:3000'
 
 $(`#login-form`).submit(function (event){
     event.preventDefault()
@@ -8,7 +7,7 @@ $(`#login-form`).submit(function (event){
         console.log('ajaxxxx')
         $.ajax({
             type: "POST", 
-            url: `${local}/user/login`, 
+            url: `http://localhost:3000/user/login`, 
             data: {
                 email: email,
                 password: password
