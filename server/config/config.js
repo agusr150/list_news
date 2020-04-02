@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "postgres",
-    "password": "postgres",
+    "password": "freexp",
     "database": "grup-project-news",
     "host": "127.0.0.1",
     "dialect": "postgres"
@@ -23,3 +23,4 @@ module.exports = {
     "operatorsAliases": false
   }
 }
+
