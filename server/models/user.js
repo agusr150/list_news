@@ -3,8 +3,8 @@
 let bcrypt = require('bcrypt')
 module.exports = (sequelize, DataTypes) => {
   const { Model } = sequelize.Sequelize
-
   class User extends Model { }
+
   User.init({
     email: {
       type: Sequelize.STRING,
