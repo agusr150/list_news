@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <link rel='stylesheet' href='asset/style.css'>
+    <title>API news</title>
+  </head>
+  <body>
+    <!--  Register FORM    -->
+    <div id="error"></div>
+    <div id="register" class="section">
+        <div><img src="https://images-na.ssl-images-amazon.com/images/I/218znY21N%2BL.png"></div>
+        <form id="register-form">
+            <h1>Register Form</h1>
+            <div class="form-group">
+              <label for="email-reg">Email address</label>
+              <input type="email" class="form-control" id="email-reg" placeholder="register your email">
+              <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+            </div>
+            <div class="form-group">
+              <label for="password-reg">Password</label>
+              <input type="password" class="form-control" id="password-reg">
+            </div>
+            <div class="form-group">
+                <label for="repassword-reg">Re-enter Your Password</label>
+                <input type="password" class="form-control" id="repassword-reg">
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+            <button type="button" class="btn btn-primary" id="btn-login">Back To Login</button>
+          </form>
+    </div>
+
+    <!--     Login FORM   -->
+    <div id="login" class="section">
+        <div><img src="https://images-na.ssl-images-amazon.com/images/I/218znY21N%2BL.png"></div>
+        <form id="login-form">
+            <h1>Login Form</h1>
+            <div class="form-group">
+              <label for="email-login">Email address</label>
+              <input type="email" class="form-control" id="email-login" placeholder="input your email">
+            </div>
+            <div class="form-group">
+              <label for="password-login">Password</label>
+              <input type="password" class="form-control" id="password-login">
+            </div>
+            <button type="submit" class="btn btn-primary mb-3">Login</button><br>
+            Please register if you have never been registered yet or using Google Sign In!
+            <button type="button" class="btn btn-primary" id="btn-register">Register</button>
+            <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+          </form>
+    </div>
+
+    <!--     News List  -->
+    <div id="newslist" class="section">
+        <h1>FAVORITE NEWS LIST</h1>
+        <div class="button">
+            <button type="button" class="btn btn-success" data-toggle="modal" data-target="#addlist">
+                Add List
+            </button>
+            <button type="button" class="btn btn-danger" id="btn-logout">Logout</button>
+        </div>
+        <table class="table table-bordered">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Country</th>
+                <th scope="col">Category</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="news-table">
+             
+            </tbody>
+          </table>
+    </div>
+
+  
+  <!-- Modal Add list -->
+  <div class="modal fade" id="addlist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Add List</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="addlist-form">
+                <div class="form-group">
+                  <label for="country">Country</label>
+                  <select class="form-control" id="country-add">
+                    <option>Indonesia</option>
+                    <option>Australia</option>
+                    <option>China</option>
+                    <option>France</option>
+                    <option>Germany</option>
+                    <option>India</option>
+                    <option>Italy</option>
+                    <option>Japan</option>
+                    <option>Malaysia</option>
+                    <option>Netherlands</option>
+                    <option>Singapore</option>
+                    <option>United_Kingdom</option>
+                    <option>United_States</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="category">Category</label>
+                  <select class="form-control" id="category-add">
+                    <option>business</option>
+                    <option>entertainment</option>
+                    <option>health</option>
+                    <option>science</option>
+                    <option>sports</option>
+                    <option>technology</option>
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal Edit list -->
+  <div class="modal fade" id="editlist" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Edit List</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+            <form id="editlist-form">
+                <div id="id-edit"></div>
+                <div class="form-group">
+                  <label for="country">Country</label>
+                  <select class="form-control" id="country-edit">
+                    
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="category">Category</label>
+                  <select class="form-control" id="category-edit">
+                    
+                  </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Save</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <!-- Page See News -->
+  
+        <div id="seenews" class="section">
+            <h1>Your Selected Highlight News</h1>
+            <table id="news-table" class="table table-bordered">
+              <thead>
+                <tr>
+                  <th scope="col">Highlight</th>
+                  <th scope="col">Source</th>
+                  <th scope="col">Link</th>
+                </tr>
+              </thead>
+              <tbody id="news">
+              </tbody>  
+            </table>
+            <button id="btn-close" type="button" class="btn btn-danger">Close</button>
+        </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <script src="asset/main.js"></script>
+    <script src="asset/request.js"></script>  
+  </body>
+</html>
