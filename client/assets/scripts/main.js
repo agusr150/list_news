@@ -37,6 +37,30 @@ $(`#btn-logout`).click(function(){
     localStorage.removeItem('token')
     $(`#news-table`).empty()
     $(`#newslist`).hide()
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
     $(`#login`).show()    
 })
 
+function onSignIn(googleUser) {
+    console.log("google ok")
+    var id_token = googleUser.getAuthResponse().id_token;
+    $.ajax({
+        type:"POST",
+        url:"http://localhost:3000/user/googlelogin",
+        data:{
+            id_token
+        },
+        success:function(response ){
+            console.log(response)
+            localStorage.setItem("token",response.token)
+            $(`#error`).empty()
+            $(`.section`).hide()
+            $(`#news-table`).empty()
+            $(`#newslist`).show()
+            listshow()
+        }
+    })
+  }
