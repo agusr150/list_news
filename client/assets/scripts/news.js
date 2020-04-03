@@ -50,6 +50,7 @@ function seenews(country, category){ //to hit API news based on id
             $(`#newslist`).hide()
             $(`#seenews`).show()
             let artikel = data.articles
+            console.log(country+"<<<country")
             for (let i=0; i<artikel.length; i++){
                 $(`#news`).append(`
                 <tr>
