@@ -48,6 +48,8 @@ function seenews(country, category){ //to hit API news based on id
         success: (data)=>{
             // console.log("sukses")
             $(`#newslist`).hide()
+            $(`#seeWeather`).show()
+            seeWeather(country)
             $(`#seenews`).show()
             let artikel = data.articles
             // console.log(country+"<<<country")

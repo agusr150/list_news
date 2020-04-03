@@ -1,4 +1,5 @@
 const seeWeather = (country) => {
+  console.log('masuk weather')
   switch (country) {
     case 'Indonesia':
       code = 'Jakarta'

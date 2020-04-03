@@ -15,7 +15,7 @@ function listshow(){
                         <td>${data[i].country}</td>
                         <td>${data[i].category}</td>
                         <td>
-                            <button type="button" class="btn btn-success" onclick=seeWeather('${data[i].country}')>See News Highlight</button>
+                            <button type="button" class="btn btn-success" onclick=seenews('${data[i].country}','${data[i].category}')>See News Highlight</button>
                             <button type="button" class="btn btn-primary" onclick=editnews(${data[i].id}) data-toggle="modal" data-target="#editlist">Edit</button>
                             <button type="button" class="btn btn-danger" onclick=deletenews(${data[i].id})>Delete</button>
                         </td>
