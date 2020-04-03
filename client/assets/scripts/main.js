@@ -5,7 +5,7 @@ $(document).ready(function(){
         $(`.section`).hide()
         $(`#news-table`).empty()
         $(`#newslist`).show()
-        $(`#seeWeather`).slideDown(1000)
+        $(`#seeWeather`).show()
         listshow()
     } else {
         $(`#error`).empty()
@@ -28,6 +28,7 @@ $(`#btn-login`).click(function(){
 
 $(`#btn-close`).click(function(){
     $(`#error`).empty()
+    $(`#seeWeather`).empty()
     $(`#news`).empty()
     $(`#seenews`).hide()
     $(`#newslist`).show()    

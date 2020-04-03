@@ -10,7 +10,7 @@ const seeWeather = (country) => {
       code = 'Beijing'
       break;
     case 'France':
-      code = 'Paris'
+      code = 'France'
       break;
     case 'Germany':
       code = 'Berlin'
@@ -19,7 +19,7 @@ const seeWeather = (country) => {
       code = 'India'
       break;
     case 'Italy':
-      code = 'Rome'
+      code = 'Italy'
       break;
     case 'Japan':
       code = 'Tokyo'
@@ -34,7 +34,7 @@ const seeWeather = (country) => {
       code = 'Singapore'
       break;
     case 'United_Kingdom':
-      code = 'London'
+      code = 'England'
       break;
     case 'United_States':
       code = 'Washington'
@@ -43,7 +43,7 @@ const seeWeather = (country) => {
 
   $.ajax({
     method: 'GET',
-    url: `http://api.openweathermap.org/data/2.5/weather?q=${country}&appid=75b5b831f17bbb45ab72d5b025e69e5f`,
+    url: `http://api.openweathermap.org/data/2.5/weather?q=${code}&appid=75b5b831f17bbb45ab72d5b025e69e5f`,
     success: (data) => {
       console.log(data)
       $('#newslist').hide()
@@ -51,12 +51,23 @@ const seeWeather = (country) => {
       
       // <<---- weather ---->>
       $('#seeWeather').append(`
-        <tr>
-          <td>Country: ${data.name}</td>
-          <td>Weather: ${data.weather[0].description}</td>
-          <td>Temperature: ${(data.main.temp - 273).toFixed(0)}</td>
-          <td>Humidity: ${data.main.humidity}</td>
-        </tr>
+        <div id="data">
+          <div id="country">
+            <td>Location: ${data.name} 📍</td>
+          </div>
+          <div id="weather">
+            <td>Weather: ${data.weather[0].description} &#x1F324</td>          
+          </div>
+          <div id="temperature">
+            <td>Temperature: ${(data.main.temp - 273).toFixed(0)} &#8451 &#x1F321</td>    
+          </div>
+          <div id="humidity">
+            <td>Humidity: ${data.main.humidity} 💧</td>
+          </div>
+          <div id="wind">
+            <td>Wind Speed: ${data.wind.speed} Kn 💨</td>
+          </div>
+        </div>
       `)
     }
   })
