@@ -48,8 +48,6 @@ const seeWeather = (country) => {
       console.log(data)
       $('#newslist').hide()
       $('#seenews').show()
-      
-      // <<---- weather ---->>
       $('#seeWeather').append(`
         <div id="data">
           <div id="country">
