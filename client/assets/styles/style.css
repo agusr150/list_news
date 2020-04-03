@@ -1,5 +1,5 @@
 body{
-    background-color: lightsteelblue;
+    background-color: #E0F7FA;
     /* background-image: url(https://images.unsplash.com/photo-1543187018-21e461e7538e?ixlib=rb-1.2.1&auto=format&fit=crop&w=1934&q=80); */
 }
 
@@ -8,7 +8,7 @@ body{
     width: 1200px; 
     border-radius: 20px;
     height: 65px; 
-    background-color:#E8F5E9; 
+    background-color:#BCAAA4; 
     padding: 20px 20px;
     margin: auto;
     justify-content: center;
@@ -71,3 +71,4 @@ h1{
     display: flex;
     justify-content: space-around;
 }
+

@@ -65,7 +65,7 @@ function seenews(country, category){ //to hit API news based on id
                     <td>${artikel[i].source.name}</td>
                     <td>
                       <a href='${artikel[i].url}'>Read</a>
-                      <button type="button" class="btn btn-success" ${a}>Translate</button>
+                      <button type="button" class="btn btn-info" ${a}>Translate</button>
                     </td>
                 </tr>
                 `)
