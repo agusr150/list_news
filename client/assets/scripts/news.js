@@ -49,19 +49,20 @@ function seenews(country, category){ //to hit API news based on id
             console.log("sukses")
             $(`#newslist`).hide()
             $(`#seenews`).show()
-            console.log(data.articles)
             let artikel = data.articles
+            console.log(country+"<<<country")
             for (let i=0; i<artikel.length; i++){
                 $(`#news`).append(`
                 <tr>
                     <td>${artikel[i].title}</td>
                     <td>${artikel[i].source.name}</td>
-                    <td><a href='${artikel[i].url}'>Read</a></td>
+                    <td>
+                      <a href='${artikel[i].url}'>Read</a>
+                      <button type="button" class="btn btn-success" onclick=translate(${country},${artikel[i].title})>Translate</button>
+                    </td>
                 </tr>
                 `)
             }
-
-            
         },
         error: (err)=>{
             console.log(err)
