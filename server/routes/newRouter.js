@@ -12,4 +12,5 @@ router.post('/create', authentication, newControl.create)
 router.put('/edit/:id', authentication, authorization, newControl.edit)
 router.delete('/delete/:id', authentication, authorization, newControl.delete)
 
+
 module.exports = router
