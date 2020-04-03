@@ -12,16 +12,16 @@ User also can edit dan delete the selected favorite news.
 To see the highlight news user also can see the weather in state region also user can translate into bahasa except from china and japan
 
 ----------------------------------------------------------------------------------------
-Method and URL
+## Method and URL
 
-GET POST DELETE PUT
-Example of these methods are created using postman and publish in the link
+## GET POST DELETE PUT
+### Example of these methods are created using postman and publish in the link
 ````
 https://documenter.getpostman.com/view/10571187/SzYaWJTx?version=latest
 ````
 
 ----------------------------------------------------------------------------------------
-Data base Table
+### Data base Table
 User : 
   email:string
   password:string
@@ -33,24 +33,24 @@ News :
   
 ------------------------------------------------------------------------------------------
 
-Translation API
+## Translation API
 
-API Translation
+### API Translation
 
-What is MyMemory?
+#### What is MyMemory?
 MyMemory is the world's largest Translation Memory. MyMemory is 100% free.
 
 It has been created collecting TMs from the European Union, United Nations and aligning the best domain specific multilingual websites.
 
 You can download memories for free in TMX format and use them with your CAT tool of choice. You can also contribute to make MyMemory even better with your memories, or editing entries. When no human translation is found for your sentences, MyMemory will help you with state-of-the-art Statistical Machine Translation technology.
 
-link for this site :
+#### link for this site :
 ````
 https://mymemory.translated.net/
 ````
 ----------------------------------------------------------------------------------------------
 
-News API
+## News API
 
 News API is a simple HTTP REST API for searching and retrieving live articles from all over the web
 You can search for articles with any combination of the following criteria:
@@ -66,7 +66,7 @@ for details :
 ````
 ------------------------------------------------------------------------------------------------
 
-Weather API
+## Weather API
 
 We provide hourly historical weather data for cities via History API. Availability of hourly historical data depends on a type of your subscription.
 You can also download this data in JSON or CSV format - 
@@ -77,7 +77,7 @@ https://openweathermap.org
 
 -------------------------------------------------------------------------------------------------
 
-Google Sign In
+## Google Sign In
 
 Google Sign-In manages the OAuth 2.0 flow and token lifecycle, simplifying your integration with Google APIs. A user always has the option to revoke access to an application at any time.
 for details : 
