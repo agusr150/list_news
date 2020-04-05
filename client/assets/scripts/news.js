@@ -58,10 +58,12 @@ function seenews(country, category){ //to hit API news based on id
               let c = b.replace(/\W/g,"_")
               // let d = c.replace("'","*")
               // console.log(c,"///////////////////")
-              let a = `onclick=terjemahan("${country}","${c}")`
+              let a = `onclick=terjemahan("${country}","${c}",${i})`
                 $(`#news`).append(`
                 <tr>
-                    <td>${artikel[i].title}</td>
+                    <td>${artikel[i].title}<br>
+                    <p style="color:blue" id="hasiltrans${i}"></p>
+                    </td>
                     <td>${artikel[i].source.name}</td>
                     <td>
                       <a href='${artikel[i].url}'>Read</a>
@@ -78,7 +80,7 @@ function seenews(country, category){ //to hit API news based on id
     })
 }
 
-function terjemahan(country,y){
+function terjemahan(country,y, i){
   let text = y.replace(/[\W_]+/g," ")
   // console.log(d,"=======================")
   let codeCountry = '';
@@ -135,11 +137,12 @@ function terjemahan(country,y){
   //console.log(text)
     $.ajax({
       type:"GET",
-      url:`https://api.mymemory.translated.net/get?q=${text}!&langpair=${codeCountry}|id`,
+      url:`https://api.mymemory.translated.net/get?q=${text}!&langpair=${codeCountry}|id&de=raharjoagus135@gmail.com`,
       success: (data)=>{
       // console.log (data.matches[0].translation,":::::::::::::::::::")
       // res.status
-          alert(data.matches[0].translation)
+          //alert(data.matches[0].translation)
+          $(`#hasiltrans${i}`).append(`Terjemahan: ${data.matches[0].translation}`)
       },
       error:(err)=>{
           // console.log(err)
